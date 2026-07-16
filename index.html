@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zenith Studio — Fitness & Yoga · Chennai</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --forest: #000000;
+  --forest-light: #000000da;
+  --forest-deep: #0a0a0a;
+  --ivory: #FFFDF5;
+  --ivory-dark: #FFF6D6;
+  --gold: #FFD500;
+  --gold-light: #FFE14D;
+  --charcoal: #000000;
+  --mist: #1a1a1a;
+  --white: #FFFFFF;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:transparent;color:var(--charcoal);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999990;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(255,255,255,0.92);border-bottom:1px solid rgba(28,58,47,0.4);transition:background 0.3s;box-shadow:0 4px 30px rgba(0,0,0,0.06);}
+nav.scrolled{background:rgba(255,255,255,.2);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase;cursor:pointer;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links > li{position:relative;}
+.nav-links > li > a{color:rgba(15,34,25,0.90);text-decoration:none;font-size:12px;letter-spacing:0.5px;padding:8px 13px;display:block;transition:color 0.2s;}
+.nav-links > li > a:hover{color:var(--gold);}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;border-top:2px solid var(--gold);border:1px solid rgba(28,58,47,0.4);z-index:999999;box-shadow:0 12px 40px rgba(0,0,0,0.18);}
+.dropdown a{display:block;padding:11px 18px;color:rgba(8, 8, 8, 0.933);text-decoration:none;font-size:12px;border-bottom:1px solid rgba(28,58,47,0.06);transition:background 0.2s,color 0.2s;}
+.dropdown a:hover{background:rgba(16, 16, 16, 0.06);color:var(--gold);}
+.nav-links > li:hover .dropdown{display:block;}
+.nav-cta{background:var(--gold)!important;color:var(--forest)!important;padding:8px 20px!important;font-weight:500;border-radius:2px;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+
+/* ── PARALLAX LAYER SYSTEM ── */
+.parallax-section{position:relative;overflow:hidden;}
+.parallax-bg{position:absolute;inset:-30% 0;background-attachment:scroll;background-size:cover;background-position:center;will-change:transform;}
+.parallax-overlay{position:absolute;inset:0;}
+.parallax-content{position:relative;z-index:2;}
+
+/* ── HERO ── */
+#hero{height:100vh;display:flex;align-items:center;justify-content:flex-start;position:relative;overflow:hidden;}
+.hero-layer-1{position:absolute;inset:-20% 0;background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=85');background-size:cover;background-position:center;will-change:transform;}
+.hero-layer-2{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.38) 55%,rgba(255,255,255,0.1) 100%);}
+.hero-content{position:relative;z-index:3;padding:0 80px;max-width:720px;}
+.hero-eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold);}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:84px;font-weight:300;line-height:0.95;color:var(--forest);margin-bottom:28px;}
+.hero-title em{font-style:italic;color:var(--gold-light);}
+.hero-subtitle{font-size:15px;color:rgba(15,34,25,0.82);line-height:1.7;margin-bottom:44px;font-weight:300;max-width:500px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--forest);padding:15px 36px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:background 0.2s,transform 0.2s;display:inline-block;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--forest);padding:15px 36px;text-decoration:none;font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(28,58,47,0.45);cursor:pointer;border-radius:2px;transition:all 0.2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-scroll-indicator{position:absolute;bottom:48px;left:80px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.hero-scroll-indicator span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(15,34,25,0.55);}
+.scroll-line{width:1px;height:56px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(0.5);opacity:0.35}}
+
+/* ── STATS BAND ── */
+.stats-band{background:var(--gold);padding:28px 80px;display:flex;justify-content:space-around;align-items:center;position:relative;z-index:10;}
+.stat-item{text-align:center;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--forest);}
+.stat-lbl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest-light);margin-top:2px;}
+.stats-divider{width:1px;height:52px;background:rgba(28,58,47,0.22);}
+
+/* ── SCROLLING BACKGROUND ── */
+.bg-scroll{position:fixed;inset:0;z-index:0;overflow:hidden;background:#eef0ec;}
+.bg-scroll::after{display:none;}
+.bg-scroll-row{position:absolute;left:0;width:200%;height:33.334%;display:flex;will-change:transform;}
+.bg-scroll-row img{height:100%;width:auto;flex-shrink:0;object-fit:cover;filter:none;}
+.bg-row-1{top:0;animation:scrollLeft 70s linear infinite;}
+.bg-row-2{top:33.334%;animation:scrollRight 80s linear infinite;}
+.bg-row-3{top:66.668%;animation:scrollLeft 90s linear infinite;}
+@keyframes scrollLeft{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes scrollRight{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+nav,footer,.page-section{position:relative;z-index:1;}
+
+/* ── PAGE SECTIONS ── */
+.page-section{display:none;}
+.page-section.active{display:block;}
+
+/* ── SECTION BASE ── */
+section{padding:112px 80px;}
+.section-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:14px;}
+.section-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1.08;color:var(--forest);margin-bottom:16px;}
+.section-title em{font-style:italic;}
+.section-divider{width:48px;height:2px;background:var(--gold);margin-bottom:52px;}
+
+/* ── PARALLAX BAND 1: MISSION ── */
+#mission-parallax{height:520px;display:flex;align-items:center;}
+.mission-bg{position:absolute;inset:-25% 0;background-image:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1920&q=80');background-size:cover;background-position:center;}
+.mission-overlay{position:absolute;inset:0;background:rgba(255,255,255,0.0);}
+.mission-content{position:relative;z-index:2;padding:0 80px;max-width:800px;}
+.mission-content blockquote{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;font-style:italic;color:var(--forest);line-height:1.2;margin-bottom:28px;}
+.mission-content blockquote span{color:var(--gold);}
+.mission-attr{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mist);}
+
+/* ── PRICING ── */
+#pricing{background:rgba(255,255,255,0.35);}
+#pricing .section-title{color:var(--forest);}
+#pricing .section-eyebrow{color:var(--gold-light);}
+#pricing .section-eyebrow::before{background:var(--gold-light);}
+#pricing .section-divider{background:var(--gold-light);}
+
+.pricing-toggle{display:flex;align-items:center;gap:20px;margin-bottom:52px;}
+.toggle-label{font-size:13px;color:rgba(15,34,25,0.72);}
+.toggle-label.active{color:var(--gold);}
+.toggle-switch{width:52px;height:28px;background:rgba(28,58,47,0.15);border-radius:14px;position:relative;cursor:pointer;transition:background 0.3s;border:1px solid rgba(28,58,47,0.15);}
+.toggle-switch.annual{background:var(--gold);}
+.toggle-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--white);transition:transform 0.3s;}
+.toggle-switch.annual .toggle-knob{transform:translateX(24px);}
+.toggle-badge{background:rgba(201,168,76,0.2);color:var(--gold);font-size:10px;letter-spacing:1px;padding:3px 10px;border-radius:20px;}
+
+/* Tier categories */
+.pricing-categories{display:flex;gap:0;margin-bottom:40px;border-bottom:1px solid rgba(28,58,47,0.1);}
+.price-cat{padding:12px 28px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(15,34,25,0.55);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;}
+.price-cat.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+.plan-section{display:none;}
+.plan-section.active{display:block;}
+
+/* Main plan grid */
+.plan-grid-main{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:32px;}
+.plan-card{background:rgba(255,255,255,0.30);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(28,58,47,0.08);padding:36px 28px;position:relative;transition:transform 0.3s,border-color 0.3s;}
+.plan-card:hover{transform:translateY(-5px);border-color:rgba(201,168,76,0.4);}
+.plan-card.featured{background:var(--gold);border-color:var(--gold);}
+.plan-card.featured .plan-name,.plan-card.featured .plan-price,.plan-card.featured .plan-period,.plan-card.featured .plan-feat{color:var(--forest)!important;}
+.plan-badge{position:absolute;top:-12px;left:24px;background:var(--gold-light);color:var(--forest);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;}
+.plan-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--forest);margin-bottom:6px;}
+.plan-price{font-size:44px;font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:2px;}
+.plan-price sup{font-size:20px;vertical-align:top;margin-top:6px;}
+.plan-period{font-size:11px;color:var(--mist);letter-spacing:1px;margin-bottom:28px;}
+.plan-divider{width:100%;height:1px;background:rgba(28,58,47,0.15);margin-bottom:24px;}
+.plan-feat{display:flex;align-items:flex-start;gap:10px;color:rgba(15,34,25,0.82);font-size:12px;margin-bottom:11px;line-height:1.4;}
+.plan-feat::before{content:'✓';color:var(--gold);font-size:11px;flex-shrink:0;margin-top:1px;}
+.plan-btn{display:block;text-align:center;margin-top:28px;padding:11px;border:1px solid rgba(28,58,47,0.25);color:var(--forest);text-decoration:none;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;cursor:pointer;background:transparent;}
+.plan-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--forest);}
+.plan-card.featured .plan-btn{border-color:var(--forest);color:var(--forest);}
+.plan-card.featured .plan-btn:hover{background:var(--forest);color:var(--gold);}
+
+/* Special plan grids */
+.plan-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.plan-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+
+/* Day pass & add-ons */
+.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.addon-card{background:rgba(255,255,255,0.30);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(28,58,47,0.06);padding:28px;transition:border-color 0.3s;}
+.addon-card:hover{border-color:var(--gold);}
+.addon-icon{font-size:24px;margin-bottom:14px;}
+.addon-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--forest);margin-bottom:6px;}
+.addon-price{font-size:28px;font-weight:300;color:var(--gold);margin-bottom:10px;}
+.addon-desc{font-size:12px;color:rgba(15,34,25,0.65);line-height:1.6;}
+
+/* Corporate band */
+.corp-band{margin-top:48px;padding:36px 40px;background:rgba(255,255,255,0.30);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(28,58,47,0.06);display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.corp-band-text h4{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--forest);margin-bottom:8px;}
+.corp-band-text p{font-size:13px;color:rgba(15,34,25,0.72);line-height:1.6;max-width:480px;}
+
+/* ── PARALLAX BAND 2: TRAINER CTA ── */
+#trainer-parallax{height:480px;display:flex;align-items:center;}
+.trainer-bg{position:absolute;inset:-25% 0;background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1920&q=80');background-size:cover;background-position:center top;}
+.trainer-overlay{position:absolute;inset:0;background:none;}
+.trainer-content{position:relative;z-index:2;padding:0 80px;}
+.trainer-content h2{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--forest);margin-bottom:16px;line-height:1.05;}
+.trainer-content h2 em{color:var(--gold-light);font-style:italic;}
+.trainer-content p{font-size:15px;color:rgba(15,34,25,0.78);margin-bottom:32px;max-width:520px;line-height:1.7;}
+
+/* ── YOGA & PROGRAMS ── */
+#programs{background:rgba(255,255,255,0.35);}
+.programs-intro{max-width:640px;margin-bottom:64px;}
+
+/* Tab system */
+.prog-tabs{display:flex;gap:0;border-bottom:1px solid rgba(28,58,47,0.12);margin-bottom:56px;overflow-x:auto;}
+.prog-tab{padding:14px 24px;font-size:12px;letter-spacing:0.5px;cursor:pointer;color:var(--mist);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color 0.2s,border-color 0.2s;}
+.prog-tab.active{color:var(--forest);border-bottom-color:var(--gold);}
+.prog-panel{display:none;}
+.prog-panel.active{display:block;}
+
+/* Yoga varieties grid */
+.yoga-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:48px;}
+.yoga-card{position:relative;height:320px;overflow:hidden;cursor:pointer;}
+.yoga-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease;}
+.yoga-card:hover .yoga-card-bg{transform:scale(1.06);}
+.yoga-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(255,255,255,0.88) 0%,rgba(255,255,255,0.2) 60%,transparent 100%);}
+.yoga-card-content{position:absolute;bottom:0;left:0;right:0;padding:28px;}
+.yoga-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.yoga-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--forest);margin-bottom:6px;}
+.yoga-level{font-size:11px;color:rgba(15,34,25,0.65);}
+.yoga-detail{position:absolute;inset:0;background:rgba(255,255,255,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:32px;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity 0.3s;}
+.yoga-card:hover .yoga-detail{opacity:1;}
+.yoga-detail h4{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);margin-bottom:12px;}
+.yoga-detail p{font-size:13px;color:rgba(15,34,25,0.85);line-height:1.7;margin-bottom:18px;}
+.yoga-detail ul{list-style:none;}
+.yoga-detail ul li{font-size:12px;color:rgba(15,34,25,0.72);margin-bottom:6px;padding-left:16px;position:relative;}
+.yoga-detail ul li::before{content:'◆';position:absolute;left:0;font-size:7px;color:var(--gold);top:3px;}
+
+/* Fitness programs */
+.fitness-programs{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+.fitness-prog-card{display:grid;grid-template-columns:280px 1fr;gap:0;border-radius:4px;overflow:hidden;background:rgba(255,255,255,0.30);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);box-shadow:0 4px 24px rgba(0,0,0,0.07);transition:box-shadow 0.3s,transform 0.3s;}
+.fitness-prog-card:hover{box-shadow:0 12px 48px rgba(0,0,0,0.12);transform:translateY(-3px);}
+.fp-img{background-size:cover;background-position:center;}
+.fp-body{padding:32px;}
+.fp-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.fp-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--forest);margin-bottom:10px;}
+.fp-desc{font-size:13px;color:#666;line-height:1.7;margin-bottom:20px;}
+.fp-meta{display:flex;gap:24px;}
+.fp-meta-item{text-align:center;}
+.fp-meta-val{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);}
+.fp-meta-lbl{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mist);}
+.fp-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+.fp-tag-pill{font-size:10px;padding:4px 10px;background:rgba(28,58,47,0.07);color:var(--forest);letter-spacing:0.5px;}
+
+/* Specialty programs full-width */
+.specialty-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+.spec-card{padding:32px;border:1px solid rgba(28,58,47,0.15);background:rgba(255,255,255,0.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all 0.3s;cursor:pointer;}
+.spec-card:hover{background:var(--forest);border-color:var(--forest);}
+.spec-card:hover .spec-name,.spec-card:hover .spec-desc{color:var(--forest);}
+.spec-card:hover .spec-icon{color:var(--gold);}
+.spec-icon{font-size:32px;margin-bottom:16px;color:var(--forest);transition:color 0.3s;}
+.spec-name{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:10px;transition:color 0.3s;}
+.spec-desc{font-size:12px;color:#666;line-height:1.6;transition:color 0.3s;}
+
+/* ── PARALLAX BAND 3: STATS ── */
+#stats-parallax{height:440px;display:flex;align-items:center;}
+.stats-bg{position:absolute;inset:-25% 0;background-image:url('https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=1920&q=80');background-size:cover;background-position:center;}
+.stats-overlay{position:absolute;inset:0;background:none;}
+.stats-content{position:relative;z-index:2;padding:0 80px;width:100%;display:grid;grid-template-columns:repeat(6,1fr);gap:0;}
+.big-stat{text-align:center;padding:32px 16px;border-right:1px solid rgba(28,58,47,0.08);}
+.big-stat:last-child{border-right:none;}
+.big-stat-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--gold);line-height:1;}
+.big-stat-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(15,34,25,0.85);margin-top:8px;}
+
+/* ── DIET SECTION ── */
+#nutrition{background:rgba(255,255,255,0.35);}
+.nutrition-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:64px;}
+.nutrition-text h3{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--forest);margin-bottom:20px;}
+.nutrition-text p{font-size:14px;color:#666;line-height:1.8;margin-bottom:24px;}
+.nutrition-img-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:380px;}
+.n-img{background-size:cover;background-position:center;border-radius:3px;}
+.n-img:first-child{grid-row:span 2;}
+.meal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.meal-card{background:rgba(255,255,255,0.30);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:3px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,0.06);transition:transform 0.3s,box-shadow 0.3s;}
+.meal-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,0.1);}
+.meal-img{width:100%;height:170px;object-fit:cover;background-size:cover;background-position:center;}
+.meal-body{padding:22px;}
+.meal-tag{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.meal-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;margin-bottom:10px;color:var(--forest);}
+.meal-macros{display:flex;gap:14px;}
+.macro{text-align:center;}
+.macro-val{font-size:18px;font-weight:300;color:var(--forest);}
+.macro-label{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--mist);}
+
+/* ── PARALLAX BAND 4: TESTIMONIAL ── */
+#testimonial-parallax{height:500px;display:flex;align-items:center;}
+.test-bg{position:absolute;inset:-25% 0;background-image:url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1920&q=80');background-size:cover;background-position:center;}
+.test-overlay{position:absolute;inset:0;background:none;}
+.test-content{position:relative;z-index:2;padding:0 80px;max-width:900px;text-align:center;margin:0 auto;}
+.test-content .big-quote{font-family:'Cormorant Garamond',serif;font-size:80px;color:var(--gold);line-height:0.5;margin-bottom:20px;}
+.test-content blockquote{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;font-style:italic;color:var(--forest);line-height:1.35;margin-bottom:28px;}
+.test-content blockquote span{color:var(--gold-light);}
+.test-attr{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mist);}
+.test-stars{color:var(--gold);font-size:18px;letter-spacing:3px;margin-bottom:20px;}
+
+/* ── REVIEWS ── */
+#reviews{background:rgba(255,255,255,0.35);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.review-card{background:rgba(255,255,255,0.30);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:36px;border-radius:3px;box-shadow:0 3px 20px rgba(0,0,0,0.05);position:relative;transition:transform 0.3s,box-shadow 0.3s;}
+.review-card:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,0,0,0.09);}
+.review-quote{font-size:52px;color:var(--gold);font-family:'Cormorant Garamond',serif;line-height:0.5;margin-bottom:18px;}
+.review-text{font-size:13px;line-height:1.75;color:#666;margin-bottom:24px;font-style:italic;}
+.reviewer{display:flex;align-items:center;gap:14px;}
+.reviewer-avatar{width:44px;height:44px;border-radius:50%;background:var(--forest-light);background-size:cover;background-position:center;flex-shrink:0;}
+.reviewer-name{font-weight:500;font-size:14px;color:var(--forest);}
+.reviewer-tag{font-size:11px;color:var(--mist);}
+.stars{color:var(--gold);font-size:12px;margin-bottom:5px;}
+
+/* ── REGISTRATION ── */
+#registration{background:rgba(255,255,255,0.35);}
+#registration .section-title{color:var(--forest);}
+#registration .section-eyebrow{color:var(--gold-light);}
+#registration .section-eyebrow::before{background:var(--gold-light);}
+#registration .section-divider{background:var(--gold);}
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px;}
+.reg-form{display:flex;flex-direction:column;gap:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:7px;}
+.form-group label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(28,58,47,0.18);padding:12px 16px;color:var(--forest);font-family:'DM Sans',sans-serif;font-size:13px;border-radius:2px;transition:border-color 0.2s;outline:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(15,34,25,0.38);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group select option{background:var(--white);color:var(--forest);}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.slot-btn{padding:10px;text-align:center;border:1px solid rgba(28,58,47,0.13);color:rgba(15,34,25,0.65);font-size:11px;cursor:pointer;transition:all 0.2s;background:transparent;}
+.slot-btn:hover,.slot-btn.selected{background:var(--gold);border-color:var(--gold);color:var(--forest);}
+.reg-summary{background:rgba(255,255,255,0.30);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);padding:40px;border:1px solid rgba(255,255,255,0.5);box-shadow:0 8px 32px rgba(28,58,47,0.08);border-radius:3px;}
+.reg-summary h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--forest);margin-bottom:28px;}
+.summary-item{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(28,58,47,0.07);font-size:13px;color:rgba(15,34,25,0.78);}
+.summary-item strong{color:var(--gold-light);}
+.summary-total{display:flex;justify-content:space-between;padding-top:20px;font-size:16px;color:var(--forest);}
+.summary-total span:last-child{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:30px;}
+
+/* ── PARALLAX BAND 5: CLOSING ── */
+#closing-parallax{height:520px;display:flex;align-items:center;justify-content:center;text-align:center;}
+.closing-bg{position:absolute;inset:-25% 0;background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80');background-size:cover;background-position:center;}
+.closing-overlay{position:absolute;inset:0;background:none;}
+.closing-content{position:relative;z-index:2;padding:0 80px;}
+.closing-content h2{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;color:var(--forest);line-height:1.05;margin-bottom:20px;}
+.closing-content h2 em{color:var(--gold-light);font-style:italic;}
+.closing-content p{font-size:16px;color:rgba(15,34,25,0.85);margin-bottom:40px;}
+
+/* ── CONTACT ── */
+#contact{background:rgba(255,255,255,0.35);}
+.contact-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;margin-top:52px;}
+.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--forest);margin-bottom:24px;}
+.contact-detail{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start;}
+.contact-icon{width:38px;height:38px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:14px;flex-shrink:0;}
+.contact-detail-text p:first-child{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mist);margin-bottom:4px;}
+.contact-detail-text p:last-child{font-size:13px;color:var(--forest);}
+.contact-form{display:flex;flex-direction:column;gap:18px;}
+.contact-form .form-group label{color:var(--forest);}
+.contact-form input,.contact-form select,.contact-form textarea{background:var(--white);border:1px solid rgba(28,58,47,0.14);padding:12px 16px;color:var(--charcoal);font-family:'DM Sans',sans-serif;font-size:13px;border-radius:2px;outline:none;transition:border-color 0.2s;width:100%;}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold);}
+.contact-form textarea{height:120px;resize:vertical;}
+.contact-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.dept-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+.dept-btn{padding:7px 16px;border:1px solid rgba(28,58,47,0.18);color:var(--mist);font-size:11px;cursor:pointer;background:transparent;transition:all 0.2s;border-radius:2px;}
+.dept-btn.active,.dept-btn:hover{background:var(--forest);color:#fff;border-color:var(--forest);}
+
+/* ── ABOUT ── */
+#about{background:rgba(255,255,255,0.35);}
+#about .section-title{color:var(--forest);}
+#about .section-eyebrow{color:var(--gold-light);}
+#about .section-eyebrow::before{background:var(--gold-light);}
+#about .section-divider{background:var(--gold);}
+.about-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:start;margin-top:52px;}
+.about-text p{font-size:14px;line-height:1.85;color:rgba(15,34,25,0.80);margin-bottom:20px;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;}
+.stat-box{padding:26px;border:1px solid rgba(28,58,47,0.15);background:rgba(255,255,255,0.30);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);}
+.stat-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mist);margin-top:4px;}
+.about-location{display:flex;align-items:center;gap:14px;margin-top:32px;padding:20px;background:rgba(255,255,255,0.30);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(255,255,255,0.5);}
+.about-location span{font-size:22px;}
+.about-location div p:first-child{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.about-location div p:last-child{font-size:13px;color:rgba(15,34,25,0.88);}
+.trainers-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.trainer-card{position:relative;overflow:hidden;height:280px;}
+.trainer-img{width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center top;transition:transform 0.5s;}
+.trainer-card:hover .trainer-img{transform:scale(1.05);}
+.trainer-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,26,18,0.9) 0%,transparent 60%);}
+.trainer-info{position:absolute;bottom:0;left:0;right:0;padding:20px;}
+.trainer-name{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--forest);margin-bottom:3px;}
+.trainer-spec{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+
+/* ── FOOTER ── */
+footer{background:rgba(255,255,255,0.40);border-top:1px solid rgba(28,58,47,0.4);padding:56px 80px 40px;}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand .footer-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--gold);letter-spacing:3px;margin-bottom:12px;}
+.footer-brand p{font-size:12px;color:rgba(15,34,25,0.45);line-height:1.7;max-width:260px;}
+.footer-col h5{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.footer-col a,.footer-col p{display:block;font-size:12px;color:rgba(15,34,25,0.55);text-decoration:none;margin-bottom:10px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(28,58,47,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(15,34,25,0.40);}
+.footer-socials{display:flex;gap:16px;}
+.footer-socials a{width:34px;height:34px;border:1px solid rgba(28,58,47,0.1);display:flex;align-items:center;justify-content:center;color:rgba(15,34,25,0.55);font-size:13px;text-decoration:none;transition:all 0.2s;border-radius:2px;}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+.reveal-delay-4{transition-delay:0.4s;}
+
+/* ── BACK TO TOP ── */
+.back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--gold);color:var(--forest);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;z-index:500;opacity:0;transform:translateY(10px);transition:all 0.3s;border-radius:2px;}
+.back-top.show{opacity:1;transform:none;}
+.back-top:hover{background:var(--gold-light);}
+
+/* Protein Notify */
+.protein-banner{background:rgba(28,58,47,0.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;padding:40px;border-radius:4px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;margin-bottom:64px;}
+.protein-img-circle{width:160px;height:160px;border-radius:50%;border:3px solid var(--gold);background:url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80') center/cover;flex-shrink:0;}
+.coming-soon-badge{background:var(--gold);color:var(--forest);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;display:inline-block;margin-bottom:12px;}
+.protein-form{display:flex;gap:10px;}
+.protein-form input{flex:1;background:rgba(255,255,255,0.6);border:1px solid rgba(28,58,47,0.2);padding:11px 15px;color:var(--forest);font-size:12px;border-radius:2px;outline:none;}
+.protein-form button{background:var(--gold);color:var(--forest);border:none;padding:11px 22px;font-size:12px;font-weight:500;cursor:pointer;border-radius:2px;}
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤768px)
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Nav */
+  nav{padding:0 20px;height:64px;}
+  .nav-links{display:none;} /* consider adding a hamburger menu trigger */
+  .nav-logo{font-size:18px;}
+
+  /* Generic section padding */
+  section{padding:64px 24px;}
+  .hero-content,.mission-content,.trainer-content,.stats-content,
+  .test-content,.closing-content{padding:0 24px;}
+
+  /* Hero */
+  #hero{height:auto;min-height:100vh;padding-top:100px;padding-bottom:60px;}
+  .hero-title{font-size:52px;}
+  .hero-subtitle{font-size:14px;max-width:100%;}
+  .hero-actions{flex-direction:column;align-items:flex-start;}
+  .hero-scroll-indicator{display:none;}
+
+  /* Stats band */
+  .stats-band{flex-wrap:wrap;gap:20px;padding:24px 20px;}
+  .stat-item{width:40%;}
+  .stats-divider{display:none;}
+
+  /* Mission / parallax quote bands */
+  #mission-parallax,.mission-content blockquote{height:auto;}
+  .mission-content blockquote{font-size:30px;}
+  #trainer-parallax,#stats-parallax,#testimonial-parallax,#closing-parallax{height:auto;padding:56px 0;}
+  .trainer-content h2{font-size:38px;}
+  .test-content blockquote{font-size:24px;}
+  .closing-content h2{font-size:44px;}
+
+  /* Stats content grid (big numbers band) */
+  .stats-content{grid-template-columns:repeat(3,1fr);gap:20px;}
+  .big-stat{border-right:none;padding:16px 8px;}
+  .big-stat-num{font-size:40px;}
+
+  /* Pricing */
+  .pricing-categories{overflow-x:auto;flex-wrap:nowrap;}
+  .plan-grid-main{grid-template-columns:repeat(2,1fr);}
+  .plan-grid-3{grid-template-columns:1fr 1fr;}
+  .plan-grid-5{grid-template-columns:repeat(2,1fr);}
+  .addon-grid{grid-template-columns:1fr 1fr;}
+  .corp-band{flex-direction:column;align-items:flex-start;}
+
+  /* Programs */
+  .yoga-grid{grid-template-columns:1fr 1fr;}
+  .fitness-programs{grid-template-columns:1fr;}
+  .fitness-prog-card{grid-template-columns:1fr;}
+  .fp-img{height:200px;}
+  .specialty-grid{grid-template-columns:1fr 1fr;}
+
+  /* Nutrition */
+  .nutrition-intro{grid-template-columns:1fr;gap:32px;}
+  .nutrition-img-grid{height:300px;}
+  .meal-grid{grid-template-columns:1fr 1fr;}
+
+  /* Reviews */
+  .reviews-grid{grid-template-columns:1fr 1fr;}
+
+  /* Registration */
+  .reg-grid{grid-template-columns:1fr;gap:32px;}
+  .form-row{grid-template-columns:1fr;}
+  .slot-grid{grid-template-columns:repeat(2,1fr);}
+
+  /* About */
+  .about-layout{grid-template-columns:1fr;gap:40px;}
+  .trainers-grid{grid-template-columns:1fr 1fr;}
+
+  /* Contact */
+  .contact-layout{grid-template-columns:1fr;gap:40px;}
+  .contact-form .form-row{grid-template-columns:1fr;}
+
+  /* Footer */
+  .footer-main{grid-template-columns:1fr 1fr;gap:32px;}
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤480px)
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  nav{padding:0 16px;height:60px;}
+  .nav-logo{font-size:16px;letter-spacing:2px;}
+
+  section{padding:48px 16px;}
+  .hero-content,.mission-content,.trainer-content,.stats-content,
+  .test-content,.closing-content{padding:0 16px;}
+
+  /* Hero */
+  .hero-title{font-size:36px;}
+  .hero-eyebrow{font-size:10px;gap:10px;}
+  .hero-subtitle{font-size:13px;}
+  .btn-primary,.btn-outline{padding:13px 24px;font-size:11px;width:100%;text-align:center;}
+
+  /* Stats band */
+  .stat-item{width:100%;}
+  .stat-num{font-size:30px;}
+
+  /* Section headings */
+  .section-title{font-size:34px;}
+  .mission-content blockquote{font-size:22px;}
+  .trainer-content h2{font-size:28px;}
+  .test-content blockquote{font-size:19px;}
+  .test-content .big-quote{font-size:50px;}
+  .closing-content h2{font-size:30px;}
+
+  /* Stats content grid */
+  .stats-content{grid-template-columns:repeat(2,1fr);}
+  .big-stat-num{font-size:30px;}
+
+  /* Pricing */
+  .plan-grid-main{grid-template-columns:1fr;}
+  .plan-grid-3{grid-template-columns:1fr;}
+  .plan-grid-5{grid-template-columns:1fr;}
+  .addon-grid{grid-template-columns:1fr;}
+
+  /* Programs */
+  .yoga-grid{grid-template-columns:1fr;}
+  .specialty-grid{grid-template-columns:1fr;}
+  .prog-tabs{gap:0;}
+
+  /* Nutrition */
+  .nutrition-img-grid{height:220px;}
+  .meal-grid{grid-template-columns:1fr;}
+
+  /* Reviews */
+  .reviews-grid{grid-template-columns:1fr;}
+
+  /* Registration */
+  .slot-grid{grid-template-columns:1fr 1fr;}
+
+  /* About */
+  .about-stats{grid-template-columns:1fr;}
+  .trainers-grid{grid-template-columns:1fr;}
+
+  /* Footer */
+  .footer-main{grid-template-columns:1fr;gap:28px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ CONTINUOUS SCROLLING BACKGROUND ══════════ -->
+<div class="bg-scroll" aria-hidden="true">
+  <div class="bg-scroll-row bg-row-1">
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=800&q=60"/>
+    <!-- duplicate set for seamless loop -->
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=800&q=60"/>
+  </div>
+  <div class="bg-scroll-row bg-row-2">
+    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=60"/>
+    <!-- duplicate set for seamless loop -->
+    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=60"/>
+  </div>
+  <div class="bg-scroll-row bg-row-3">
+    <img src="https://images.unsplash.com/photo-1470468969717-61d5d54fd036?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=60"/>
+    <!-- duplicate set for seamless loop -->
+    <img src="https://images.unsplash.com/photo-1470468969717-61d5d54fd036?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&q=60"/>
+    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=60"/>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <a class="nav-logo" href="#" onclick="showSection('home')">ZENITH</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showSection('home')">Home</a></li>
+    <li>
+      <a href="#" onclick="showSection('pricing')">Plan & Price ▾</a>
+      <div class="dropdown">
+        <a href="#" onclick="showSection('pricing')">Monthly Plans</a>
+        <a href="#" onclick="showSection('pricing')">Yoga Memberships</a>
+        <a href="#" onclick="showSection('pricing')">Day Passes & Add-ons</a>
+        <a href="#" onclick="showSection('pricing')">Corporate Packages</a>
+        <a href="#" onclick="showSection('pricing')">Student Rates</a>
+      </div>
+    </li>
+    <li><a href="#" onclick="showSection('nutrition')">Diet Plan</a></li>
+    <li>
+      <a href="#" onclick="showSection('programs')">Yoga & Fitness ▾</a>
+      <div class="dropdown">
+        <a href="#" onclick="showSection('programs');switchTab('yoga')">Yoga Varieties</a>
+        <a href="#" onclick="showSection('programs');switchTab('strength')">Strength Training</a>
+        <a href="#" onclick="showSection('programs');switchTab('cardio')">Cardio Programs</a>
+        <a href="#" onclick="showSection('programs');switchTab('specialty')">Specialty Classes</a>
+        <a href="#" onclick="showSection('programs');switchTab('corporate')">Corporate Wellness</a>
+      </div>
+    </li>
+    <li><a href="#" onclick="showSection('registration')">Join Now</a></li>
+    <li><a href="#" onclick="showSection('reviews')">Reviews</a></li>
+    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    <li><a href="#" onclick="showSection('about')">About</a></li>
+    <li><a href="#" onclick="showSection('registration')" class="nav-cta">Enroll Today</a></li>
+  </ul>
+</nav>
+
+<div id="sec-home" class="page-section active">
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="hero-layer-1" id="hero-parallax-layer"></div>
+  <div class="hero-layer-2"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Chennai's Premier Wellness Studio</p>
+    <h1 class="hero-title">Transform Your<br/><em>Body & Mind</em><br/>Together</h1>
+    <p class="hero-subtitle">Expert-led yoga, high-performance fitness, and personalised nutrition under one elegant roof. Where discipline becomes a lifestyle.</p>
+    <div class="hero-actions">
+      <a href="#" onclick="showSection('registration')" class="btn-primary">Begin Your Journey</a>
+      <a href="#" onclick="showSection('programs')" class="btn-outline">Explore Programs</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stat-item"><div class="stat-num">1,800+</div><div class="stat-lbl">Active Members</div></div>
+  <div class="stats-divider"></div>
+  <div class="stat-item"><div class="stat-num">24</div><div class="stat-lbl">Expert Trainers</div></div>
+  <div class="stats-divider"></div>
+  <div class="stat-item"><div class="stat-num">9 yrs</div><div class="stat-lbl">Of Excellence</div></div>
+  <div class="stats-divider"></div>
+  <div class="stat-item"><div class="stat-num">60+</div><div class="stat-lbl">Weekly Classes</div></div>
+  <div class="stats-divider"></div>
+  <div class="stat-item"><div class="stat-num">15+</div><div class="stat-lbl">Yoga Varieties</div></div>
+  <div class="stats-divider"></div>
+  <div class="stat-item"><div class="stat-num">12k</div><div class="stat-lbl">Sq.ft Studio</div></div>
+</div>
+
+<!-- ══════════ PARALLAX: MISSION ══════════ -->
+<div id="mission-parallax" class="parallax-section">
+  <div class="mission-bg parallax-bg" id="mission-layer"></div>
+  <div class="mission-overlay parallax-overlay"></div>
+  <div class="mission-content parallax-content">
+    <blockquote>"Every body is capable of <span>extraordinary</span> things — it just needs the right environment to discover them."</blockquote>
+    <p class="mission-attr">— Zenith Studio Philosophy · Est. 2016</p>
+  </div>
+</div>
+
+</div>
+<!-- ══════════ PRICING ══════════ -->
+<div id="sec-pricing" class="page-section">
+<section id="pricing">
+  <p class="section-eyebrow">Membership</p>
+  <h2 class="section-title" style="color:var(--forest);">Choose Your <em>Perfect Plan</em></h2>
+  <div class="section-divider" style="background:var(--gold-light);"></div>
+
+  <div class="pricing-toggle">
+    <span class="toggle-label active" id="toggle-monthly-lbl">Monthly</span>
+    <div class="toggle-switch" id="billing-toggle" onclick="toggleBilling()"><div class="toggle-knob"></div></div>
+    <span class="toggle-label" id="toggle-annual-lbl">Annual</span>
+    <span class="toggle-badge">Save up to 20%</span>
+  </div>
+
+  <div class="pricing-categories">
+    <div class="price-cat active" onclick="switchPriceCat('fitness')">Fitness Memberships</div>
+    <div class="price-cat" onclick="switchPriceCat('yoga')">Yoga Memberships</div>
+    <div class="price-cat" onclick="switchPriceCat('combo')">Combo Plans</div>
+    <div class="price-cat" onclick="switchPriceCat('personal')">Personal Training</div>
+    <div class="price-cat" onclick="switchPriceCat('student')">Student & Senior</div>
+  </div>
+
+  <!-- FITNESS PLANS -->
+  <div class="plan-section active" id="psec-fitness">
+    <div class="plan-grid-main reveal">
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price" data-monthly="1499" data-annual="1199"><sup>₹</sup>1,499</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Gym floor access (6am–10am)</div>
+        <div class="plan-feat">Basic equipment use</div>
+        <div class="plan-feat">Locker facility</div>
+        <div class="plan-feat">1 group class/week</div>
+        <div class="plan-feat">Wellness app access</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Get Started</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Essential</div>
+        <div class="plan-price" data-monthly="2499" data-annual="1999"><sup>₹</sup>2,499</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Full gym access (all hours)</div>
+        <div class="plan-feat">All group classes included</div>
+        <div class="plan-feat">Locker & shower</div>
+        <div class="plan-feat">Basic diet consultation</div>
+        <div class="plan-feat">Wellness app + tracking</div>
+        <div class="plan-feat">Morning & evening slots</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Get Started</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">Prime</div>
+        <div class="plan-price" data-monthly="4299" data-annual="3449"><sup>₹</sup>4,299</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider" style="background:rgba(28,58,47,0.2);"></div>
+        <div class="plan-feat">Everything in Essential</div>
+        <div class="plan-feat">4 personal training sessions</div>
+        <div class="plan-feat">Full nutrition & meal planning</div>
+        <div class="plan-feat">Priority slot booking</div>
+        <div class="plan-feat">Monthly body assessment</div>
+        <div class="plan-feat">2 guest passes / month</div>
+        <div class="plan-feat">Recovery room access</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Get Started</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Elite</div>
+        <div class="plan-price" data-monthly="7999" data-annual="6399"><sup>₹</sup>7,999</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Everything in Prime</div>
+        <div class="plan-feat">Unlimited personal training</div>
+        <div class="plan-feat">Weekly dietitian sessions</div>
+        <div class="plan-feat">Exclusive Elite-only hours</div>
+        <div class="plan-feat">Injury rehab support</div>
+        <div class="plan-feat">4 guest passes / month</div>
+        <div class="plan-feat">Infrared therapy room</div>
+        <div class="plan-feat">Priority class reservations</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOGA PLANS -->
+  <div class="plan-section" id="psec-yoga">
+    <div class="plan-grid-main reveal">
+      <div class="plan-card">
+        <div class="plan-name">Yoga Lite</div>
+        <div class="plan-price" data-monthly="1299" data-annual="1049"><sup>₹</sup>1,299</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">3 yoga classes/week</div>
+        <div class="plan-feat">Hatha & Yin styles only</div>
+        <div class="plan-feat">Mat & props provided</div>
+        <div class="plan-feat">Beginner-friendly guidance</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Explore Yoga</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Yoga Flow</div>
+        <div class="plan-price" data-monthly="2199" data-annual="1749"><sup>₹</sup>2,199</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Unlimited yoga classes</div>
+        <div class="plan-feat">All yoga styles (8 types)</div>
+        <div class="plan-feat">Mat, props & towel</div>
+        <div class="plan-feat">Monthly progress check</div>
+        <div class="plan-feat">Meditation sessions</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Explore Yoga</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Best Value</div>
+        <div class="plan-name">Yoga Premium</div>
+        <div class="plan-price" data-monthly="3499" data-annual="2799"><sup>₹</sup>3,499</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider" style="background:rgba(28,58,47,0.2);"></div>
+        <div class="plan-feat">All yoga varieties (15 types)</div>
+        <div class="plan-feat">2 private yoga sessions</div>
+        <div class="plan-feat">Breathwork workshops</div>
+        <div class="plan-feat">Ayurvedic consultation</div>
+        <div class="plan-feat">Yoga nidra sessions</div>
+        <div class="plan-feat">Props & mat locker</div>
+        <div class="plan-feat">Online session access</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Explore Yoga</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Yoga Holistic</div>
+        <div class="plan-price" data-monthly="5999" data-annual="4799"><sup>₹</sup>5,999</div>
+        <div class="plan-period">/ month</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Everything in Yoga Premium</div>
+        <div class="plan-feat">4 private sessions monthly</div>
+        <div class="plan-feat">Sound healing sessions</div>
+        <div class="plan-feat">Chakra alignment therapy</div>
+        <div class="plan-feat">Personalised yoga sequence</div>
+        <div class="plan-feat">Retreat priority booking</div>
+        <div class="plan-feat">Family member discount 20%</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Explore Yoga</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMBO PLANS -->
+  <div class="plan-section" id="psec-combo">
+    <div class="plan-grid-3 reveal">
+      <div class="plan-card">
+        <div class="plan-name">Wellness Core</div>
+        <div class="plan-price" data-monthly="3299" data-annual="2649"><sup>₹</sup>3,299</div>
+        <div class="plan-period">/ month · Gym + Yoga</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Full gym floor access</div>
+        <div class="plan-feat">5 yoga classes/week</div>
+        <div class="plan-feat">Diet consultation (monthly)</div>
+        <div class="plan-feat">All equipment included</div>
+        <div class="plan-feat">Wellness tracking app</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Choose Combo</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Comprehensive</div>
+        <div class="plan-name">Total Transform</div>
+        <div class="plan-price" data-monthly="5999" data-annual="4799"><sup>₹</sup>5,999</div>
+        <div class="plan-period">/ month · Gym + Yoga + Nutrition</div>
+        <div class="plan-divider" style="background:rgba(28,58,47,0.2);"></div>
+        <div class="plan-feat">Unlimited gym + yoga access</div>
+        <div class="plan-feat">3 personal training sessions</div>
+        <div class="plan-feat">Weekly nutrition planning</div>
+        <div class="plan-feat">Monthly body composition</div>
+        <div class="plan-feat">All 15 yoga varieties</div>
+        <div class="plan-feat">Recovery lounge access</div>
+        <div class="plan-feat">2 spa therapy sessions</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Choose Combo</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Zenith All-Access</div>
+        <div class="plan-price" data-monthly="9999" data-annual="7999"><sup>₹</sup>9,999</div>
+        <div class="plan-period">/ month · Everything Unlimited</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Truly unlimited everything</div>
+        <div class="plan-feat">Daily personal training</div>
+        <div class="plan-feat">Private yoga sessions 2x/week</div>
+        <div class="plan-feat">Personal dietitian on-call</div>
+        <div class="plan-feat">Exclusive member concierge</div>
+        <div class="plan-feat">4 guest passes / month</div>
+        <div class="plan-feat">Infrared + cryotherapy</div>
+        <div class="plan-feat">Annual health screening</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Choose Combo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSONAL TRAINING -->
+  <div class="plan-section" id="psec-personal">
+    <div style="margin-bottom:36px;">
+      <p style="color:rgba(15,34,25,0.65);font-size:13px;line-height:1.7;max-width:600px;">All personal training packages are in addition to any active membership. Sessions are 60 minutes each with a certified trainer assigned to your goals.</p>
+    </div>
+    <div class="plan-grid-main reveal">
+      <div class="plan-card">
+        <div class="plan-name">Kickstart</div>
+        <div class="plan-price"><sup>₹</sup>2,999</div>
+        <div class="plan-period">4 sessions pack</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Initial fitness assessment</div>
+        <div class="plan-feat">Personalised workout plan</div>
+        <div class="plan-feat">Form correction focus</div>
+        <div class="plan-feat">Valid 30 days</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Book Sessions</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Momentum</div>
+        <div class="plan-price"><sup>₹</sup>5,999</div>
+        <div class="plan-period">8 sessions pack</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Progressive overload program</div>
+        <div class="plan-feat">Weekly check-ins</div>
+        <div class="plan-feat">Video form review</div>
+        <div class="plan-feat">Meal timing guidance</div>
+        <div class="plan-feat">Valid 45 days</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Book Sessions</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Best Results</div>
+        <div class="plan-name">Transformation</div>
+        <div class="plan-price"><sup>₹</sup>10,999</div>
+        <div class="plan-period">16 sessions pack</div>
+        <div class="plan-divider" style="background:rgba(28,58,47,0.2);"></div>
+        <div class="plan-feat">Full body transformation plan</div>
+        <div class="plan-feat">Dedicated trainer pairing</div>
+        <div class="plan-feat">Bi-weekly body assessment</div>
+        <div class="plan-feat">Nutrition plan included</div>
+        <div class="plan-feat">Recovery protocol design</div>
+        <div class="plan-feat">Valid 60 days</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Book Sessions</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Elite Coach</div>
+        <div class="plan-price"><sup>₹</sup>19,999</div>
+        <div class="plan-period">Monthly · unlimited</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Daily personal training</div>
+        <div class="plan-feat">Same dedicated trainer</div>
+        <div class="plan-feat">Weekly dietitian consult</div>
+        <div class="plan-feat">Sports performance testing</div>
+        <div class="plan-feat">Access to all programs</div>
+        <div class="plan-feat">Priority scheduling 24/7</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Book Sessions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDENT & SENIOR -->
+  <div class="plan-section" id="psec-student">
+    <p style="color:rgba(15,34,25,0.65);font-size:13px;line-height:1.7;max-width:600px;margin-bottom:36px;">Valid ID required at registration. Student rates apply to ages 16–24 with valid college ID. Senior rates for 55+ with age proof.</p>
+    <div class="plan-grid-main reveal">
+      <div class="plan-card">
+        <div class="plan-name">Student Lite</div>
+        <div class="plan-price" data-monthly="999" data-annual="799"><sup>₹</sup>999</div>
+        <div class="plan-period">/ month · Student</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Gym access (off-peak hours)</div>
+        <div class="plan-feat">2 group classes/week</div>
+        <div class="plan-feat">Locker facility</div>
+        <div class="plan-feat">Student ID required</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Student Enroll</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Student Favourite</div>
+        <div class="plan-name">Student Prime</div>
+        <div class="plan-price" data-monthly="1799" data-annual="1449"><sup>₹</sup>1,799</div>
+        <div class="plan-period">/ month · Student</div>
+        <div class="plan-divider" style="background:rgba(28,58,47,0.2);"></div>
+        <div class="plan-feat">Full gym & yoga access</div>
+        <div class="plan-feat">All group classes included</div>
+        <div class="plan-feat">Nutrition workshop access</div>
+        <div class="plan-feat">Study + wellness balance tips</div>
+        <div class="plan-feat">Wellness app included</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Student Enroll</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Silver Wellness</div>
+        <div class="plan-price" data-monthly="1599" data-annual="1279"><sup>₹</sup>1,599</div>
+        <div class="plan-period">/ month · Senior 55+</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">Gentle fitness programs</div>
+        <div class="plan-feat">Chair yoga & Yin yoga</div>
+        <div class="plan-feat">Physiotherapy-adjacent classes</div>
+        <div class="plan-feat">Small group sessions</div>
+        <div class="plan-feat">Monthly health check</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Senior Enroll</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Silver Holistic</div>
+        <div class="plan-price" data-monthly="2799" data-annual="2249"><sup>₹</sup>2,799</div>
+        <div class="plan-period">/ month · Senior 55+</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feat">All Silver Wellness benefits</div>
+        <div class="plan-feat">2 personal training sessions</div>
+        <div class="plan-feat">Chronic condition support</div>
+        <div class="plan-feat">Dietary guidance for seniors</div>
+        <div class="plan-feat">Pool & spa access (partner)</div>
+        <a href="#" onclick="showSection('registration')" class="plan-btn">Senior Enroll</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add-ons -->
+  <div class="addon-grid reveal">
+    <div class="addon-card">
+      <div class="addon-icon">🎟️</div>
+      <div class="addon-name">Day Pass</div>
+      <div class="addon-price">₹299</div>
+      <div class="addon-desc">Drop-in for a single day. Full gym and group class access. No commitment required.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🧘</div>
+      <div class="addon-name">Yoga Trial (3 days)</div>
+      <div class="addon-price">₹499</div>
+      <div class="addon-desc">Try any 3 yoga sessions within 7 days. Perfect for first-timers exploring their practice.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🥤</div>
+      <div class="addon-name">Supplement Locker</div>
+      <div class="addon-price">₹399/mo</div>
+      <div class="addon-desc">Personal supplement storage locker at the studio. Pre & post-workout station access.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🛁</div>
+      <div class="addon-name">Spa Add-on</div>
+      <div class="addon-price">₹799/mo</div>
+      <div class="addon-desc">4 spa therapy sessions monthly. Includes deep-tissue massage and infrared sauna.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">📱</div>
+      <div class="addon-name">Online Streaming</div>
+      <div class="addon-price">₹599/mo</div>
+      <div class="addon-desc">Live stream all group classes and yoga sessions. Access recordings for 7 days.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🤝</div>
+      <div class="addon-name">Bring-a-Friend</div>
+      <div class="addon-price">₹199/visit</div>
+      <div class="addon-desc">One-time guest pass for any class or gym session. Valid for non-members accompanying you.</div>
+    </div>
+  </div>
+
+  <!-- Corporate Banner -->
+  <div class="corp-band reveal">
+    <div class="corp-band-text">
+      <h4>Corporate & Group Packages</h4>
+      <p>Enroll 10+ members from your organisation and unlock exclusive corporate wellness rates starting at <strong style="color:var(--forest);">₹1,299/month</strong> per head. Volume pricing, dedicated slots, and on-site wellness programs available.</p>
+    </div>
+    <div style="display:flex;gap:16px;flex-shrink:0;">
+      <a href="#" onclick="showSection('contact')" class="btn-outline">Enquire Now</a>
+      <a href="#" onclick="showSection('registration')" class="btn-primary">Enroll Team</a>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ PARALLAX: TRAINER ══════════ -->
+<div id="sec-programs" class="page-section">
+<div id="trainer-parallax" class="parallax-section">
+  <div class="trainer-bg parallax-bg" id="trainer-layer"></div>
+  <div class="trainer-overlay parallax-overlay"></div>
+  <div class="trainer-content parallax-content">
+    <h2>Train With the <em>Best</em><br/>Achieve the Rest</h2>
+    <p>Our 24 certified trainers hold qualifications from ACE, ACSM, RYT-500, and more. They don't just guide your sessions — they invest in your transformation.</p>
+    <a href="#" onclick="showSection('about')" class="btn-primary">Meet Our Trainers</a>
+  </div>
+</div>
+
+<!-- ══════════ PROGRAMS ══════════ -->
+<section id="programs">
+  <div class="programs-intro reveal">
+    <p class="section-eyebrow">Programs</p>
+    <h2 class="section-title">Yoga, Fitness &amp; <em>Everything Between</em></h2>
+    <div class="section-divider"></div>
+    <p style="font-size:14px;color:#666;line-height:1.8;">From ancient yoga traditions to modern performance training — 60+ weekly sessions across 5 categories, all under our 12,000 sq.ft. studio.</p>
+  </div>
+
+  <div class="prog-tabs">
+    <div class="prog-tab active" onclick="switchTab('yoga')" id="tab-yoga">Yoga Varieties</div>
+    <div class="prog-tab" onclick="switchTab('strength')" id="tab-strength">Strength Training</div>
+    <div class="prog-tab" onclick="switchTab('cardio')" id="tab-cardio">Cardio Programs</div>
+    <div class="prog-tab" onclick="switchTab('specialty')" id="tab-specialty">Specialty Classes</div>
+    <div class="prog-tab" onclick="switchTab('corporate')" id="tab-corporate">Corporate Wellness</div>
+  </div>
+
+  <!-- ── YOGA PANEL ── -->
+  <div class="prog-panel active" id="panel-yoga">
+    <div class="yoga-grid">
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Foundation</div>
+          <div class="yoga-name">Hatha Yoga</div>
+          <div class="yoga-level">All levels · 60 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Hatha Yoga</h4>
+          <p>The mother of all yoga styles. Hatha focuses on physical postures (asanas) and breathing techniques (pranayama) to align and calm the body, mind, and spirit.</p>
+          <ul>
+            <li>Improves flexibility & posture</li>
+            <li>Reduces stress and anxiety</li>
+            <li>Builds core strength gradually</li>
+            <li>Suitable for complete beginners</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Dynamic Flow</div>
+          <div class="yoga-name">Vinyasa Flow</div>
+          <div class="yoga-level">Intermediate · 60 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Vinyasa Flow</h4>
+          <p>A flowing, dynamic practice that links breath to movement. Each class is creatively sequenced for a different experience — no two sessions are the same.</p>
+          <ul>
+            <li>Builds heat and cardiovascular fitness</li>
+            <li>Develops body awareness & rhythm</li>
+            <li>Improves muscular endurance</li>
+            <li>Best suited to intermediate practitioners</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Heat & Power</div>
+          <div class="yoga-name">Ashtanga Yoga</div>
+          <div class="yoga-level">Advanced · 90 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Ashtanga Yoga</h4>
+          <p>A rigorous, structured practice with a fixed sequence of postures performed in the same order. Builds serious strength, stamina, and internal heat.</p>
+          <ul>
+            <li>Rapid strength & endurance gains</li>
+            <li>Purifies through internal heat (tapas)</li>
+            <li>Traditional Mysore-style self-practice</li>
+            <li>Advanced practitioners preferred</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Restoration</div>
+          <div class="yoga-name">Yin Yoga</div>
+          <div class="yoga-level">All levels · 75 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Yin Yoga</h4>
+          <p>Long-held passive poses that target the deep connective tissues. The perfect counterbalance to any active practice — deeply meditative and restorative.</p>
+          <ul>
+            <li>Improves joint mobility & flexibility</li>
+            <li>Stimulates meridian channels</li>
+            <li>Deep relaxation response</li>
+            <li>Ideal after strength or HIIT sessions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Heated Practice</div>
+          <div class="yoga-name">Bikram / Hot Yoga</div>
+          <div class="yoga-level">All levels · 90 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Hot Yoga</h4>
+          <p>Practiced in a heated room (38–40°C), 26 postures and 2 breathing exercises. Intense detoxification with profound flexibility benefits.</p>
+          <ul>
+            <li>Deep muscle relaxation in heat</li>
+            <li>Detoxification through sweat</li>
+            <li>Accelerated calorie burn</li>
+            <li>Cardio conditioning benefits</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Alignment-Based</div>
+          <div class="yoga-name">Iyengar Yoga</div>
+          <div class="yoga-level">Beginner-Intermediate · 75 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Iyengar Yoga</h4>
+          <p>Precision-led practice with extensive use of props — belts, blocks, bolsters — to achieve perfect alignment. Ideal for those recovering from injury.</p>
+          <ul>
+            <li>Perfect anatomical alignment</li>
+            <li>Therapeutic for chronic pain</li>
+            <li>Props make it highly accessible</li>
+            <li>Develops attention and discipline</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1566501206188-5dd0cf160a0e?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Mind & Body</div>
+          <div class="yoga-name">Kundalini Yoga</div>
+          <div class="yoga-level">All levels · 75 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Kundalini Yoga</h4>
+          <p>Known as the yoga of awareness. Combines breathwork, mantra, mudra, and movement to awaken dormant energy and expand consciousness.</p>
+          <ul>
+            <li>Energises nervous system</li>
+            <li>Powerful breathwork (pranayama)</li>
+            <li>Mantra and meditation included</li>
+            <li>Transformative inner experience</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Women's Wellness</div>
+          <div class="yoga-name">Prenatal Yoga</div>
+          <div class="yoga-level">Expecting moms · 60 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Prenatal Yoga</h4>
+          <p>A safe, nurturing practice designed for all trimesters. Focuses on breathing for labour, pelvic floor strength, and the emotional journey of pregnancy.</p>
+          <ul>
+            <li>Safe for all trimesters</li>
+            <li>Reduces pregnancy discomfort</li>
+            <li>Breathing for labour preparation</li>
+            <li>Supportive community of mothers</li>
+          </ul>
+        </div>
+      </div>
+      <div class="yoga-card">
+        <div class="yoga-card-bg" style="background-image:url('https://images.unsplash.com/photo-1506126279646-a697353d3166?w=800&q=80');"></div>
+        <div class="yoga-card-overlay"></div>
+        <div class="yoga-card-content">
+          <div class="yoga-tag">Aerial Practice</div>
+          <div class="yoga-name">Aerial Yoga</div>
+          <div class="yoga-level">Beginner-Advanced · 60 min</div>
+        </div>
+        <div class="yoga-detail">
+          <h4>Aerial Yoga</h4>
+          <p>Traditional yoga poses adapted using a silk hammock suspended from the ceiling. Decompresses the spine and allows inversions with full support.</p>
+          <ul>
+            <li>Full spinal decompression</li>
+            <li>Supported inversions for everyone</li>
+            <li>Core and upper body strength</li>
+            <li>Incredibly fun and playful</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- More yoga styles list -->
+    <div style="margin-top:48px;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--forest);margin-bottom:32px;">Plus 6 More <em>Specialised Styles</em></h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="padding:24px;border:1px solid rgba(28,58,47,0.12);">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Therapeutic</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:8px;">Chair Yoga</div>
+          <div style="font-size:12px;color:#888;line-height:1.6;">Accessible yoga for seniors, desk workers, and those with mobility limitations. All poses performed seated or with chair support.</div>
+        </div>
+        <div style="padding:24px;border:1px solid rgba(28,58,47,0.12);">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Sleep & Recovery</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:8px;">Yoga Nidra</div>
+          <div style="font-size:12px;color:#888;line-height:1.6;">Known as "yogic sleep," this guided meditation induces deep relaxation equivalent to hours of sleep. Profoundly restorative.</div>
+        </div>
+        <div style="padding:24px;border:1px solid rgba(28,58,47,0.12);">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Breath Science</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:8px;">Pranayama</div>
+          <div style="font-size:12px;color:#888;line-height:1.6;">Dedicated breathwork sessions covering Kapalbhati, Anulom Vilom, Bhramari and advanced techniques for mental clarity.</div>
+        </div>
+        <div style="padding:24px;border:1px solid rgba(28,58,47,0.12);">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Kids Program</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:8px;">Kids Yoga</div>
+          <div style="font-size:12px;color:#888;line-height:1.6;">Fun, story-based yoga for children ages 5–14. Builds focus, emotional regulation, and body awareness through play.</div>
+        </div>
+        <div style="padding:24px;border:1px solid rgba(28,58,47,0.12);">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Strength + Flow</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:8px;">Power Yoga</div>
+          <div style="font-size:12px;color:#888;line-height:1.6;">A gym-inspired, fitness-based approach to Vinyasa yoga. Builds serious strength, lean muscle, and athletic performance.</div>
+        </div>
+        <div style="padding:24px;border:1px solid rgba(28,58,47,0.12);">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Ancient Tradition</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--forest);margin-bottom:8px;">Sivananda Yoga</div>
+          <div style="font-size:12px;color:#888;line-height:1.6;">Based on five principles: proper exercise, breathing, relaxation, diet, and positive thinking. A complete holistic system.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STRENGTH PANEL ── -->
+  <div class="prog-panel" id="panel-strength">
+    <div class="fitness-programs">
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Strength Foundation</div>
+          <div class="fp-name">Barbell Fundamentals</div>
+          <div class="fp-desc">Master the squat, deadlift, bench press, and overhead press. Structured progressive overload with expert form coaching in small groups of 6.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">6</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">60</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">5×</div><div class="fp-meta-lbl">Weekly</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">Beginner–Adv</span><span class="fp-tag-pill">Compound lifts</span><span class="fp-tag-pill">Progressive</span></div>
+        </div>
+      </div>
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Hypertrophy Program</div>
+          <div class="fp-name">Build & Sculpt</div>
+          <div class="fp-desc">Volume-based training designed for muscle building. Split into push/pull/legs protocols with tempo manipulation and isolation work.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">8</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">75</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">6×</div><div class="fp-meta-lbl">Weekly</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">Intermediate</span><span class="fp-tag-pill">PPL Split</span><span class="fp-tag-pill">Volume</span></div>
+        </div>
+      </div>
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Functional Fitness</div>
+          <div class="fp-name">Athletic Performance</div>
+          <div class="fp-desc">Sports-science-driven functional training. Combines kettlebells, TRX, plyometrics, and Olympic lifting for raw athletic performance.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">10</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">60</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">5×</div><div class="fp-meta-lbl">Weekly</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">Advanced</span><span class="fp-tag-pill">Functional</span><span class="fp-tag-pill">Sports</span></div>
+        </div>
+      </div>
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Body Composition</div>
+          <div class="fp-name">Total Body Tone</div>
+          <div class="fp-desc">Full-body resistance training using dumbbells, bands, and bodyweight. High-rep, moderate weight for lean muscle and fat loss simultaneously.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">12</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">45</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">Daily</div><div class="fp-meta-lbl">Frequency</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">All levels</span><span class="fp-tag-pill">Fat loss</span><span class="fp-tag-pill">Toning</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARDIO PANEL ── -->
+  <div class="prog-panel" id="panel-cardio">
+    <div class="fitness-programs">
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">High Intensity</div>
+          <div class="fp-name">HIIT Circuit</div>
+          <div class="fp-desc">45-minute high-intensity interval training with 30-second work/15-second rest cycles. Maximises calorie burn and cardiovascular conditioning.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">15</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">45</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">Daily</div><div class="fp-meta-lbl">Frequency</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">All levels</span><span class="fp-tag-pill">Calorie burn</span><span class="fp-tag-pill">No equipment</span></div>
+        </div>
+      </div>
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Dance Fitness</div>
+          <div class="fp-name">Zumba &amp; Dance Cardio</div>
+          <div class="fp-desc">Latin rhythms, Bollywood beats, and international dance styles fused into an energetic cardio session. No experience needed — just move!</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">20</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">60</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">4×</div><div class="fp-meta-lbl">Weekly</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">All levels</span><span class="fp-tag-pill">Dance</span><span class="fp-tag-pill">Fun</span></div>
+        </div>
+      </div>
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Endurance Training</div>
+          <div class="fp-name">Spin &amp; Indoor Cycling</div>
+          <div class="fp-desc">Studio cycling with instructor-led resistance intervals, tempo rides, and endurance climbs. Our spin studio has 20 premium Technogym bikes.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">20</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">45</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">6×</div><div class="fp-meta-lbl">Weekly</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">All levels</span><span class="fp-tag-pill">Cycling</span><span class="fp-tag-pill">Low impact</span></div>
+        </div>
+      </div>
+      <div class="fitness-prog-card">
+        <div class="fp-img" style="background-image:url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80');"></div>
+        <div class="fp-body">
+          <div class="fp-tag">Combat Fitness</div>
+          <div class="fp-name">Kickboxing &amp; Box-Fit</div>
+          <div class="fp-desc">Non-contact boxing and kickboxing combinations on bags and pads. Build explosive power, coordination, and unrivalled cardiovascular fitness.</div>
+          <div class="fp-meta">
+            <div class="fp-meta-item"><div class="fp-meta-val">12</div><div class="fp-meta-lbl">Per class</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">60</div><div class="fp-meta-lbl">Minutes</div></div>
+            <div class="fp-meta-item"><div class="fp-meta-val">4×</div><div class="fp-meta-lbl">Weekly</div></div>
+          </div>
+          <div class="fp-tags"><span class="fp-tag-pill">Intermediate</span><span class="fp-tag-pill">Combat</span><span class="fp-tag-pill">Power</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPECIALTY PANEL ── -->
+  <div class="prog-panel" id="panel-specialty">
+    <div class="specialty-grid">
+      <div class="spec-card">
+        <div class="spec-icon">🧗</div>
+        <div class="spec-name">Calisthenics & Bodyweight</div>
+        <div class="spec-desc">Master your own bodyweight. Progressions from basics to advanced skills — handstands, muscle-ups, front levers. No equipment, maximum control.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🔱</div>
+        <div class="spec-name">Pilates Reformer</div>
+        <div class="spec-desc">Classical and contemporary Pilates on our 8 Balanced Body Reformers. Spine alignment, core integration, and postural correction.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🤸</div>
+        <div class="spec-name">Mobility & Flexibility</div>
+        <div class="spec-desc">PNF stretching, fascial release, and active mobility drills. Move better, feel less pain, recover faster from every workout.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🧠</div>
+        <div class="spec-name">Mindfulness & Meditation</div>
+        <div class="spec-desc">Guided meditation, mindfulness-based stress reduction, and breathing techniques. The mental fitness practice your training needs.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🏋️</div>
+        <div class="spec-name">CrossFit-Style WODs</div>
+        <div class="spec-desc">Daily varied functional movements performed at high intensity. Strength, cardio, and gymnastics combined in benchmark workouts.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🌊</div>
+        <div class="spec-name">Aqua Aerobics (Partner)</div>
+        <div class="spec-desc">Low-impact pool-based cardio at our partner facility 5 min away. Ideal for rehabilitation, seniors, and joint-friendly conditioning.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">⚡</div>
+        <div class="spec-name">EMS Training</div>
+        <div class="spec-desc">Electrical Muscle Stimulation suits deliver 20x the muscle activation of conventional training. 20 min = 4 hours of gym work.</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🎯</div>
+        <div class="spec-name">Sports Performance</div>
+        <div class="spec-desc">For athletes and sports enthusiasts. Speed, agility, power, and sport-specific conditioning protocols designed with sports science.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CORPORATE PANEL ── -->
+  <div class="prog-panel" id="panel-corporate">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--forest);margin-bottom:20px;">Workplace <em>Wellness</em> Reimagined</h3>
+        <p style="font-size:14px;color:#666;line-height:1.8;margin-bottom:24px;">We partner with 40+ organisations in Chennai to deliver on-site and studio-based wellness programs. Healthy employees are productive employees.</p>
+        <p style="font-size:14px;color:#666;line-height:1.8;margin-bottom:32px;">From yoga desks-side sessions to full transformation programs for entire teams, our corporate wellness division designs bespoke solutions.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
+          <div style="padding:20px;border:1px solid rgba(28,58,47,0.12);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);margin-bottom:4px;">40+</div>
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);">Partner Companies</div>
+          </div>
+          <div style="padding:20px;border:1px solid rgba(28,58,47,0.12);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);margin-bottom:4px;">500+</div>
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);">Corporate Members</div>
+          </div>
+          <div style="padding:20px;border:1px solid rgba(28,58,47,0.12);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);margin-bottom:4px;">₹1,299</div>
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);">From / employee</div>
+          </div>
+          <div style="padding:20px;border:1px solid rgba(28,58,47,0.12);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);margin-bottom:4px;">On-site</div>
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);">Sessions available</div>
+          </div>
+        </div>
+        <a href="#" onclick="showSection('contact')" class="btn-primary">Request Corporate Quote</a>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,0.28);border:1px solid rgba(255,255,255,0.5);padding:36px;margin-bottom:20px;">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">What's Included</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--forest);margin-bottom:20px;">Corporate Package Benefits</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Dedicated corporate gym timeslots</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Group yoga & fitness sessions</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Nutrition webinars for teams</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Mental wellness workshops</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Annual health assessment reports</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Employee wellness app licenses</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Dedicated account manager</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> On-site sessions (minimum 20 staff)</div>
+            <div style="display:flex;gap:10px;font-size:13px;color:#555;"><span style="color:var(--gold);">✓</span> Volume discounts 10–40+% off</div>
+          </div>
+        </div>
+        <div style="padding:24px;background:var(--forest);color:#fff;">
+          <div style="font-size:12px;color:var(--gold);margin-bottom:8px;">Trusted by</div>
+          <div style="font-size:13px;color:rgba(15,34,25,0.78);line-height:1.7;">Infosys · TCS · Cognizant · HCL · Zoho · Freshworks · ITC Hotels · Apollo Hospitals · Standard Chartered · and 32 more.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ PARALLAX: STATS ══════════ -->
+<div id="sec-nutrition" class="page-section">
+<div id="stats-parallax" class="parallax-section">
+  <div class="stats-bg parallax-bg" id="stats-layer"></div>
+  <div class="stats-overlay parallax-overlay"></div>
+  <div class="stats-content parallax-content">
+    <div class="big-stat"><div class="big-stat-num">1,800+</div><div class="big-stat-lbl">Members</div></div>
+    <div class="big-stat"><div class="big-stat-num">15</div><div class="big-stat-lbl">Yoga Styles</div></div>
+    <div class="big-stat"><div class="big-stat-num">60+</div><div class="big-stat-lbl">Classes/Week</div></div>
+    <div class="big-stat"><div class="big-stat-num">24</div><div class="big-stat-lbl">Trainers</div></div>
+    <div class="big-stat"><div class="big-stat-num">9 yrs</div><div class="big-stat-lbl">Excellence</div></div>
+    <div class="big-stat"><div class="big-stat-num">40+</div><div class="big-stat-lbl">Corporates</div></div>
+  </div>
+</div>
+
+<!-- ══════════ NUTRITION ══════════ -->
+<section id="nutrition">
+  <p class="section-eyebrow">Nutrition</p>
+  <h2 class="section-title">Fuel Your <em>Performance</em></h2>
+  <div class="section-divider"></div>
+
+  <div class="nutrition-intro reveal">
+    <div class="nutrition-text">
+      <h3>What you eat is as important as how you train.</h3>
+      <p>Our team of registered dietitians creates personalised nutrition plans tailored to your specific goals — whether you're building muscle, losing fat, or simply feeling your best every day.</p>
+      <p>From macro tracking to meal prep guides, Ayurvedic principles to sports nutrition — we cover every dietary philosophy with evidence-based guidance.</p>
+      <a href="#" onclick="showSection('registration')" class="btn-primary" style="margin-top:8px;">Book a Nutrition Consult</a>
+    </div>
+    <div class="nutrition-img-grid">
+      <div class="n-img" style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80');"></div>
+      <div class="n-img" style="background-image:url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&q=80');"></div>
+      <div class="n-img" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80');"></div>
+    </div>
+  </div>
+
+  <!-- Protein Banner -->
+  <div class="protein-banner reveal">
+    <div class="protein-img-circle"></div>
+    <div>
+      <div class="coming-soon-badge">Coming Soon</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:10px;color:var(--forest);">Zenith Protein Collection</div>
+      <p style="font-size:13px;color:rgba(15,34,25,0.78);line-height:1.6;max-width:420px;margin-bottom:20px;">Premium whey isolates, plant-based blends, and recovery supplements — curated by our nutrition team. Zero artificial fillers. Clinically validated ratios.</p>
+      <div class="protein-form">
+        <input type="email" placeholder="Your email address" />
+        <button onclick="alert('You\'re on the list!')">Notify Me</button>
+      </div>
+    </div>
+    <div style="flex-shrink:0;text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--gold);font-weight:300;">Q3</div>
+      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(15,34,25,0.65);">2025 Launch</div>
+    </div>
+  </div>
+
+  <!-- Meal Cards -->
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--forest);margin-bottom:36px;">Trainer-Recommended <em>Meal Plans</em></h3>
+  <div class="meal-grid">
+    <div class="meal-card reveal">
+      <div class="meal-img" style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80');"></div>
+      <div class="meal-body">
+        <div class="meal-tag">Pre-Workout · Morning</div>
+        <div class="meal-name">Power Oat Bowl</div>
+        <p style="font-size:12px;color:#888;line-height:1.6;margin-bottom:18px;">Rolled oats, banana, almond butter, chia seeds. Slow-release energy before an intense session.</p>
+        <div class="meal-macros">
+          <div class="macro"><div class="macro-val">38g</div><div class="macro-label">Protein</div></div>
+          <div class="macro"><div class="macro-val">62g</div><div class="macro-label">Carbs</div></div>
+          <div class="macro"><div class="macro-val">14g</div><div class="macro-label">Fats</div></div>
+          <div class="macro"><div class="macro-val">520</div><div class="macro-label">kcal</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="meal-card reveal reveal-delay-1">
+      <div class="meal-img" style="background-image:url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80');"></div>
+      <div class="meal-body">
+        <div class="meal-tag">Post-Workout · Lunch</div>
+        <div class="meal-name">Grilled Chicken Bowl</div>
+        <p style="font-size:12px;color:#888;line-height:1.6;margin-bottom:18px;">Lemon-herb chicken, quinoa, steamed broccoli, avocado. Maximum recovery nutrition.</p>
+        <div class="meal-macros">
+          <div class="macro"><div class="macro-val">52g</div><div class="macro-label">Protein</div></div>
+          <div class="macro"><div class="macro-val">45g</div><div class="macro-label">Carbs</div></div>
+          <div class="macro"><div class="macro-val">18g</div><div class="macro-label">Fats</div></div>
+          <div class="macro"><div class="macro-val">550</div><div class="macro-label">kcal</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="meal-card reveal reveal-delay-2">
+      <div class="meal-img" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80');"></div>
+      <div class="meal-body">
+        <div class="meal-tag">Light · Dinner</div>
+        <div class="meal-name">Paneer Salad Wrap</div>
+        <p style="font-size:12px;color:#888;line-height:1.6;margin-bottom:18px;">High-protein paneer, mixed greens, cucumber, tahini drizzle. Whole-wheat wrap.</p>
+        <div class="meal-macros">
+          <div class="macro"><div class="macro-val">34g</div><div class="macro-label">Protein</div></div>
+          <div class="macro"><div class="macro-val">38g</div><div class="macro-label">Carbs</div></div>
+          <div class="macro"><div class="macro-val">12g</div><div class="macro-label">Fats</div></div>
+          <div class="macro"><div class="macro-val">395</div><div class="macro-label">kcal</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="meal-card reveal">
+      <div class="meal-img" style="background-image:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80');"></div>
+      <div class="meal-body">
+        <div class="meal-tag">Snack · Anytime</div>
+        <div class="meal-name">Egg White Muffins</div>
+        <p style="font-size:12px;color:#888;line-height:1.6;margin-bottom:18px;">Mini egg-white bites with spinach, bell pepper, low-fat cheese. Meal-prepped and grab-ready.</p>
+        <div class="meal-macros">
+          <div class="macro"><div class="macro-val">28g</div><div class="macro-label">Protein</div></div>
+          <div class="macro"><div class="macro-val">8g</div><div class="macro-label">Carbs</div></div>
+          <div class="macro"><div class="macro-val">4g</div><div class="macro-label">Fats</div></div>
+          <div class="macro"><div class="macro-val">180</div><div class="macro-label">kcal</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="meal-card reveal reveal-delay-1">
+      <div class="meal-img" style="background-image:url('https://blog.alphacoach.app/wp-content/uploads/2025/12/Nutritional-Profile-of-Dal-768x419.jpg');"></div>
+      <div class="meal-body">
+        <div class="meal-tag">Vegetarian · Lunch</div>
+        <div class="meal-name">Dal Protein Bowl</div>
+        <p style="font-size:12px;color:#888;line-height:1.6;margin-bottom:18px;">Moong dal, brown rice, kale, roasted sweet potato. South Indian high-protein classic reimagined.</p>
+        <div class="meal-macros">
+          <div class="macro"><div class="macro-val">29g</div><div class="macro-label">Protein</div></div>
+          <div class="macro"><div class="macro-val">68g</div><div class="macro-label">Carbs</div></div>
+          <div class="macro"><div class="macro-val">9g</div><div class="macro-label">Fats</div></div>
+          <div class="macro"><div class="macro-val">470</div><div class="macro-label">kcal</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="meal-card reveal reveal-delay-2">
+      <div class="meal-img" style="background-image:url('https://images.pexels.com/photos/15913468/pexels-photo-15913468.jpeg');"></div>
+      <div class="meal-body">
+        <div class="meal-tag">Recovery · Evening</div>
+        <div class="meal-name">Salmon & Veggie Tray</div>
+        <p style="font-size:12px;color:#888;line-height:1.6;margin-bottom:18px;">Omega-3 rich salmon, roasted asparagus, cherry tomatoes and lemon. Anti-inflammatory recovery meal.</p>
+        <div class="meal-macros">
+          <div class="macro"><div class="macro-val">44g</div><div class="macro-label">Protein</div></div>
+          <div class="macro"><div class="macro-val">22g</div><div class="macro-label">Carbs</div></div>
+          <div class="macro"><div class="macro-val">20g</div><div class="macro-label">Fats</div></div>
+          <div class="macro"><div class="macro-val">440</div><div class="macro-label">kcal</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ PARALLAX: TESTIMONIAL ══════════ -->
+<div id="sec-reviews" class="page-section">
+<div id="testimonial-parallax" class="parallax-section">
+  <div class="test-bg parallax-bg" id="test-layer"></div>
+  <div class="test-overlay parallax-overlay"></div>
+  <div class="test-content parallax-content">
+    <div class="test-stars">★★★★★</div>
+    <div class="big-quote">"</div>
+    <blockquote>Zenith didn't just change my body. It changed how I think, how I sleep, how I approach every single day. It's the <span>best investment</span> I've ever made in myself.</blockquote>
+    <p class="test-attr">— Priya R. · Member since 2021 · Elite Plan</p>
+  </div>
+</div>
+
+<!-- ══════════ REVIEWS ══════════ -->
+<section id="reviews">
+  <p class="section-eyebrow">Testimonials</p>
+  <h2 class="section-title">What Our Members <em>Say</em></h2>
+  <div class="section-divider"></div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">The yoga program here is unlike anything I've experienced. My teacher really sees me — she adjusted my practice around my old knee injury and I've never felt better.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background-image:url('https://randomuser.me/api/portraits/women/32.jpg');background-size:cover;"></div>
+        <div><div class="reviewer-name">Ananya Krishnan</div><div class="reviewer-tag">Yoga Premium Member · 2 years</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">I joined Zenith for weight loss and ended up discovering a love for strength training. Down 18 kg in 8 months. The trainers are knowledgeable and actually care about your progress.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background-image:url('https://randomuser.me/api/portraits/men/45.jpg');background-size:cover;"></div>
+        <div><div class="reviewer-name">Karthik Rajan</div><div class="reviewer-tag">Prime Member · 18 months</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">We enrolled 45 employees on the corporate plan. The impact on our team's energy, morale, and sick day count has been measurable and significant. Worth every rupee.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background-image:url('https://randomuser.me/api/portraits/women/68.jpg');background-size:cover;"></div>
+        <div><div class="reviewer-name">Meera Subramaniam</div><div class="reviewer-tag">HR Director · Corporate Partner</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">Hot yoga at Zenith is something else. The heated room, the instructors, the community — I've been coming 4 times a week for a year and I still look forward to every session.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background-image:url('https://randomuser.me/api/portraits/men/22.jpg');background-size:cover;"></div>
+        <div><div class="reviewer-name">Vikram Mehta</div><div class="reviewer-tag">Yoga Holistic Member · 1 year</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">As a 60-year-old with chronic back pain, I was nervous about starting. The Silver Wellness program and the specialised trainers here have genuinely transformed my quality of life.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background-image:url('https://randomuser.me/api/portraits/men/78.jpg');background-size:cover;"></div>
+        <div><div class="reviewer-name">Dr. Suresh Rao</div><div class="reviewer-tag">Silver Holistic Member · 8 months</div></div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <div class="review-text">The nutrition and fitness combination here is elite. My body composition has changed completely and my energy levels are through the roof. Zenith is the real deal in Chennai.</div>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background-image:url('https://randomuser.me/api/portraits/women/55.jpg');background-size:cover;"></div>
+        <div><div class="reviewer-name">Deepika Nair</div><div class="reviewer-tag">Total Transform Member · 14 months</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ REGISTRATION ══════════ -->
+<div id="sec-registration" class="page-section">
+<section id="registration">
+  <p class="section-eyebrow">Join Zenith</p>
+  <h2 class="section-title">Start Your <em>Transformation</em></h2>
+  <div class="section-divider"></div>
+  <div class="reg-grid">
+    <div class="reg-form">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Arjun"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email</label><input type="email" placeholder="arjun@email.com"/></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 98765 43210"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Age</label><input type="number" placeholder="28"/></div>
+        <div class="form-group"><label>Gender</label>
+          <select>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Program / Plan</label>
+        <select id="reg-program" onchange="updateSummary()">
+          <option value="">Choose a plan…</option>
+          <optgroup label="── Fitness Memberships ──">
+            <option value="starter|Starter Fitness|1499">Starter — ₹1,499/mo</option>
+            <option value="essential|Essential Fitness|2499">Essential — ₹2,499/mo</option>
+            <option value="prime|Prime Fitness|4299">Prime — ₹4,299/mo</option>
+            <option value="elite|Elite Fitness|7999">Elite — ₹7,999/mo</option>
+          </optgroup>
+          <optgroup label="── Yoga Memberships ──">
+            <option value="yoga-lite|Yoga Lite|1299">Yoga Lite — ₹1,299/mo</option>
+            <option value="yoga-flow|Yoga Flow|2199">Yoga Flow — ₹2,199/mo</option>
+            <option value="yoga-premium|Yoga Premium|3499">Yoga Premium — ₹3,499/mo</option>
+            <option value="yoga-holistic|Yoga Holistic|5999">Yoga Holistic — ₹5,999/mo</option>
+          </optgroup>
+          <optgroup label="── Combo Plans ──">
+            <option value="wellness-core|Wellness Core|3299">Wellness Core (Gym+Yoga) — ₹3,299/mo</option>
+            <option value="total-transform|Total Transform|5999">Total Transform — ₹5,999/mo</option>
+            <option value="all-access|Zenith All-Access|9999">Zenith All-Access — ₹9,999/mo</option>
+          </optgroup>
+          <optgroup label="── Personal Training ──">
+            <option value="pt-kickstart|PT Kickstart (4 sessions)|2999">PT Kickstart Pack — ₹2,999</option>
+            <option value="pt-momentum|PT Momentum (8 sessions)|5999">PT Momentum Pack — ₹5,999</option>
+            <option value="pt-transform|PT Transformation (16)|10999">PT Transformation Pack — ₹10,999</option>
+            <option value="pt-elite|Elite Coach (Monthly)|19999">Elite Coach Monthly — ₹19,999</option>
+          </optgroup>
+          <optgroup label="── Student & Senior ──">
+            <option value="student-lite|Student Lite|999">Student Lite — ₹999/mo</option>
+            <option value="student-prime|Student Prime|1799">Student Prime — ₹1,799/mo</option>
+            <option value="silver-wellness|Silver Wellness (55+)|1599">Silver Wellness — ₹1,599/mo</option>
+            <option value="silver-holistic|Silver Holistic (55+)|2799">Silver Holistic — ₹2,799/mo</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Membership Duration</label>
+        <select id="reg-duration" onchange="updateSummary()">
+          <option value="1|1 Month|0">1 Month — Standard rate</option>
+          <option value="3|3 Months|5">3 Months — Save 5%</option>
+          <option value="6|6 Months|10">6 Months — Save 10%</option>
+          <option value="12|12 Months|20">12 Months — Save 20% ⭐</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Primary Goal</label>
+        <select>
+          <option>Weight Loss</option>
+          <option>Muscle Building</option>
+          <option>Flexibility & Yoga</option>
+          <option>Stress Reduction</option>
+          <option>Sports Performance</option>
+          <option>Overall Wellness</option>
+          <option>Injury Rehabilitation</option>
+          <option>General Fitness</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Slot</label>
+        <div class="slot-grid">
+          <div class="slot-btn" onclick="selectSlot(this)">5:30 AM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">6:30 AM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">7:30 AM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">9:00 AM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">11:00 AM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">1:00 PM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">4:30 PM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">6:00 PM</div>
+          <div class="slot-btn" onclick="selectSlot(this)">7:30 PM</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Special Requirements / Medical Notes</label>
+        <textarea placeholder="Any injuries, health conditions, or preferences we should know about..." style="height:88px;resize:vertical;"></textarea>
+      </div>
+      <button class="btn-primary" onclick="submitReg()" style="align-self:flex-start;margin-top:8px;">Submit Registration</button>
+    </div>
+
+    <div class="reg-summary">
+      <h3>Your Registration Summary</h3>
+      <div class="summary-item"><span>Program</span><strong id="sum-program">—</strong></div>
+      <div class="summary-item"><span>Duration</span><strong id="sum-duration">—</strong></div>
+      <div class="summary-item"><span>Monthly Rate</span><strong id="sum-rate">—</strong></div>
+      <div class="summary-item"><span>Duration Discount</span><strong id="sum-disc">—</strong></div>
+      <div class="summary-item"><span>Time Slot</span><strong id="sum-slot">Not selected</strong></div>
+      <div class="summary-total"><span>Total Amount</span><span id="sum-total">₹0</span></div>
+      <div style="margin-top:28px;padding:20px;background:rgba(255,255,255,0.30);border:1px solid rgba(255,255,255,0.5);">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">What Happens Next</div>
+        <div style="font-size:12px;color:rgba(15,34,25,0.65);line-height:1.8;">
+          1. Our team contacts you within 24 hours<br/>
+          2. Schedule your welcome orientation<br/>
+          3. Complete health assessment & fitness test<br/>
+          4. Receive your personalised program plan<br/>
+          5. Begin your transformation journey
+        </div>
+      </div>
+      <div style="margin-top:20px;font-size:11px;color:rgba(15,34,25,0.45);line-height:1.6;">No payment required at registration. Our team will confirm your slot and send payment details via WhatsApp. No lock-in contracts for monthly memberships.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ PARALLAX: CLOSING ══════════ -->
+<div id="sec-contact" class="page-section">
+<div id="closing-parallax" class="parallax-section">
+  <div class="closing-bg parallax-bg" id="closing-layer"></div>
+  <div class="closing-overlay parallax-overlay"></div>
+  <div class="closing-content parallax-content">
+    <h2>Your Best Self<br/>Starts <em>Here</em></h2>
+    <p>Join 1,800+ members who chose to transform their lives at Zenith Studio, Chennai.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#" onclick="showSection('registration')" class="btn-primary">Enroll Today</a>
+      <a href="#" onclick="showSection('contact')" class="btn-outline">Book a Free Tour</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <p class="section-eyebrow">Contact Us</p>
+  <h2 class="section-title">We'd Love to <em>Hear from You</em></h2>
+  <div class="section-divider"></div>
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h3>Visit, Call, or Write</h3>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div class="contact-detail-text">
+          <p>Address</p>
+          <p>12, Nungambakkam High Road<br/>Chennai – 600 034<br/><span style="font-size:11px;color:var(--mist);">5 min from Nungambakkam Metro</span></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div class="contact-detail-text">
+          <p>Phone / WhatsApp</p>
+          <p>+91 44 2826 7890<br/>+91 98765 43210</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-detail-text">
+          <p>Email</p>
+          <p>hello@zenithstudio.in<br/>corporate@zenithstudio.in</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-detail-text">
+          <p>Studio Hours</p>
+          <p>Mon–Fri: 5:00 AM – 10:00 PM<br/>Sat–Sun: 6:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+      <div class="dept-row" style="margin-top:8px;">
+        <button class="dept-btn active" onclick="selectDept(this)">General</button>
+        <button class="dept-btn" onclick="selectDept(this)">Yoga</button>
+        <button class="dept-btn" onclick="selectDept(this)">Nutrition</button>
+        <button class="dept-btn" onclick="selectDept(this)">Corporate</button>
+        <button class="dept-btn" onclick="selectDept(this)">Complaints</button>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group"><label style="color:var(--forest);">Name</label><input placeholder="Your full name"/></div>
+        <div class="form-group"><label style="color:var(--forest);">Phone</label><input placeholder="+91 98765 43210"/></div>
+      </div>
+      <div class="form-group"><label style="color:var(--forest);">Email</label><input type="email" placeholder="your@email.com"/></div>
+      <div class="form-group">
+        <label style="color:var(--forest);">Subject</label>
+        <select style="background:var(--white);border:1px solid rgba(28,58,47,0.14);padding:12px 16px;color:var(--charcoal);font-size:13px;border-radius:2px;outline:none;">
+          <option>Membership Enquiry</option>
+          <option>Trial Class Booking</option>
+          <option>Corporate Wellness</option>
+          <option>Nutrition Consultation</option>
+          <option>Personal Training</option>
+          <option>Schedule a Tour</option>
+          <option>Feedback or Complaint</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label style="color:var(--forest);">Message</label><textarea placeholder="Tell us how we can help you…"></textarea></div>
+      <button class="btn-primary" onclick="submitContact()" style="align-self:flex-start;">Send Message</button>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ ABOUT ══════════ -->
+<div id="sec-about" class="page-section">
+<section id="about">
+  <p class="section-eyebrow">Our Story</p>
+  <h2 class="section-title">Who We <em>Are</em></h2>
+  <div class="section-divider"></div>
+  <div class="about-layout">
+    <div>
+      <div class="about-text">
+        <p>Founded in 2016, Zenith Studio began as a 2,000 sq.ft. yoga room with three instructors and a vision: to create a wellness space in Chennai where elite training and mindful practice existed side by side, under one elegant roof.</p>
+        <p>Today, we operate across 12,000 sq.ft. with 24 certified trainers, 15 yoga varieties, a dedicated nutrition clinic, and a recovery lounge — having transformed the lives of over 1,800 active members.</p>
+        <p>Our philosophy is simple: real transformation happens when the body, mind, and spirit work together. Everything at Zenith is designed with that belief at its core.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box reveal"><div class="stat-val">2016</div><div class="stat-label">Year Founded</div></div>
+        <div class="stat-box reveal reveal-delay-1"><div class="stat-val">12k+</div><div class="stat-label">Sq.ft Studio</div></div>
+        <div class="stat-box reveal reveal-delay-2"><div class="stat-val">24</div><div class="stat-label">Expert Trainers</div></div>
+        <div class="stat-box reveal reveal-delay-3"><div class="stat-val">1,800+</div><div class="stat-label">Active Members</div></div>
+      </div>
+      <div class="about-location reveal">
+        <span>📍</span>
+        <div>
+          <p>Find Us</p>
+          <p>12, Nungambakkam High Road, Chennai – 600 034<br/><span style="font-size:11px;color:rgba(15,34,25,0.55);">5 min from Nungambakkam Metro Station</span></p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--forest);margin-bottom:20px;font-weight:300;">Meet Our <em style="font-style:italic;color:var(--gold);">Lead Trainers</em></div>
+      <div class="trainers-grid">
+        <div class="trainer-card">
+          <div class="trainer-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80');background-size:cover;background-position:center;width:100%;height:100%;"></div>
+          <div class="trainer-overlay"></div>
+          <div class="trainer-info"><div class="trainer-name">Ravi Shankar</div><div class="trainer-spec">Head of Strength · ACE Certified</div></div>
+        </div>
+        <div class="trainer-card">
+          <div class="trainer-img" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80');background-size:cover;background-position:center;width:100%;height:100%;"></div>
+          <div class="trainer-overlay"></div>
+          <div class="trainer-info"><div class="trainer-name">Kavitha Nair</div><div class="trainer-spec">Lead Yoga · RYT-500 Ashtanga</div></div>
+        </div>
+        <div class="trainer-card">
+          <div class="trainer-img" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&q=80');background-size:cover;background-position:center;width:100%;height:100%;"></div>
+          <div class="trainer-overlay"></div>
+          <div class="trainer-info"><div class="trainer-name">Supriya Menon</div><div class="trainer-spec">Nutrition Director · MSc Sports Nutrition</div></div>
+        </div>
+        <div class="trainer-card">
+          <div class="trainer-img" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80');background-size:cover;background-position:center;width:100%;height:100%;"></div>
+          <div class="trainer-overlay"></div>
+          <div class="trainer-info"><div class="trainer-name">Arjun Pillai</div><div class="trainer-spec">HIIT & Cardio · CSCS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">ZENITH</div>
+      <p>Chennai's premier wellness studio. Expert yoga, high-performance fitness, and personalised nutrition under one elegant roof since 2016.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Programs</h5>
+      <a href="#" onclick="showSection('programs');switchTab('yoga')">Yoga Varieties</a>
+      <a href="#" onclick="showSection('programs');switchTab('strength')">Strength Training</a>
+      <a href="#" onclick="showSection('programs');switchTab('cardio')">Cardio Programs</a>
+      <a href="#" onclick="showSection('programs');switchTab('specialty')">Specialty Classes</a>
+      <a href="#" onclick="showSection('programs');switchTab('corporate')">Corporate Wellness</a>
+    </div>
+    <div class="footer-col">
+      <h5>Memberships</h5>
+      <a href="#" onclick="showSection('pricing')">Fitness Plans</a>
+      <a href="#" onclick="showSection('pricing')">Yoga Plans</a>
+      <a href="#" onclick="showSection('pricing')">Combo Plans</a>
+      <a href="#" onclick="showSection('pricing')">Personal Training</a>
+      <a href="#" onclick="showSection('pricing')">Student & Senior</a>
+      <a href="#" onclick="showSection('pricing')">Day Pass</a>
+    </div>
+    <div class="footer-col">
+      <h5>Studio</h5>
+      <a href="#" onclick="showSection('about')">About Us</a>
+      <a href="#" onclick="showSection('nutrition')">Diet Plans</a>
+      <a href="#" onclick="showSection('reviews')">Reviews</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+      <a href="#" onclick="showSection('registration')">Join Now</a>
+      <p>hello@zenithstudio.in</p>
+      <p>+91 44 2826 7890</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Zenith Wellness Studio Pvt. Ltd. · 12, Nungambakkam High Road, Chennai · All rights reserved</div>
+    <div class="footer-socials">
+      <a href="#">in</a>
+      <a href="#">𝕏</a>
+      <a href="#">📸</a>
+      <a href="#">▶</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ── PARALLAX ENGINE ──
+const parallaxLayers = [
+  { el: document.getElementById('hero-parallax-layer'), speed: 0.45, offset: 0 },
+  { el: document.getElementById('mission-layer'), speed: 0.35, offset: 0 },
+  { el: document.getElementById('trainer-layer'), speed: 0.4, offset: 0 },
+  { el: document.getElementById('stats-layer'), speed: 0.3, offset: 0 },
+  { el: document.getElementById('test-layer'), speed: 0.38, offset: 0 },
+  { el: document.getElementById('closing-layer'), speed: 0.35, offset: 0 },
+];
+
+// Pre-calculate section offsets
+function cacheOffsets() {
+  parallaxLayers.forEach(layer => {
+    if (layer.el) {
+      const section = layer.el.closest('.parallax-section') || layer.el.parentElement;
+      layer.sectionTop = section ? section.getBoundingClientRect().top + window.scrollY : 0;
+    }
+  });
+}
+
+let ticking = false;
+function updateParallax() {
+  const scrollY = window.scrollY;
+  const vh = window.innerHeight;
+  parallaxLayers.forEach(layer => {
+    if (!layer.el) return;
+    const sectionTop = layer.sectionTop || 0;
+    const relativeScroll = scrollY - sectionTop + vh;
+    const translate = relativeScroll * layer.speed;
+    layer.el.style.transform = `translateY(${-translate * 0.3}px)`;
+  });
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(updateParallax);
+    ticking = true;
+  }
+  // Nav scroll class
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 80);
+  // Back to top
+  document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+  // Scroll reveal
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+  });
+}, { passive: true });
+
+window.addEventListener('resize', () => { cacheOffsets(); updateParallax(); });
+window.addEventListener('load', () => { cacheOffsets(); updateParallax(); });
+
+// ── PAGE NAVIGATION ──
+const sections = ['home','pricing','programs','nutrition','reviews','registration','contact','about'];
+function showSection(id) {
+  sections.forEach(s => {
+    const el = document.getElementById('sec-' + s);
+    if (el) el.classList.remove('active');
+  });
+  const target = document.getElementById('sec-' + id);
+  if (target) { target.classList.add('active'); window.scrollTo(0,0); }
+  setTimeout(() => { cacheOffsets(); updateParallax(); }, 50);
+}
+
+// ── BILLING TOGGLE ──
+let isAnnual = false;
+function toggleBilling() {
+  isAnnual = !isAnnual;
+  const toggle = document.getElementById('billing-toggle');
+  toggle.classList.toggle('annual', isAnnual);
+  document.getElementById('toggle-monthly-lbl').classList.toggle('active', !isAnnual);
+  document.getElementById('toggle-annual-lbl').classList.toggle('active', isAnnual);
+  document.querySelectorAll('.plan-price[data-monthly]').forEach(el => {
+    const price = isAnnual ? el.dataset.annual : el.dataset.monthly;
+    const numFmt = parseInt(price).toLocaleString('en-IN');
+    el.innerHTML = `<sup>₹</sup>${numFmt}`;
+  });
+}
+
+// ── PRICING CATEGORIES ──
+function switchPriceCat(cat) {
+  document.querySelectorAll('.price-cat').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.plan-section').forEach(s => s.classList.remove('active'));
+  event.target.classList.add('active');
+  const sec = document.getElementById('psec-' + cat);
+  if (sec) sec.classList.add('active');
+}
+
+// ── PROGRAM TABS ──
+function switchTab(tab) {
+  document.querySelectorAll('.prog-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.prog-panel').forEach(p => p.classList.remove('active'));
+  const tabEl = document.getElementById('tab-' + tab);
+  const panelEl = document.getElementById('panel-' + tab);
+  if (tabEl) tabEl.classList.add('active');
+  if (panelEl) panelEl.classList.add('active');
+}
+
+// ── SLOT SELECTION ──
+function selectSlot(el) {
+  document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('sum-slot').textContent = el.textContent;
+}
+
+// ── REGISTRATION SUMMARY ──
+function updateSummary() {
+  const prog = document.getElementById('reg-program');
+  if (!prog || !prog.value) return;
+  const parts = prog.value.split('|');
+  const name = parts[1]; const rate = parseInt(parts[2]) || 0;
+  const dur = document.getElementById('reg-duration');
+  const durParts = dur.value.split('|');
+  const months = parseInt(durParts[0]);
+  const disc = parseInt(durParts[2]) || 0;
+  const total = Math.round(rate * months * (1 - disc / 100));
+  document.getElementById('sum-program').textContent = name || '—';
+  document.getElementById('sum-duration').textContent = durParts[1] || '—';
+  document.getElementById('sum-rate').textContent = rate ? '₹' + rate.toLocaleString('en-IN') + '/mo' : '—';
+  document.getElementById('sum-disc').textContent = disc ? disc + '% off' : 'None';
+  document.getElementById('sum-total').textContent = rate ? '₹' + total.toLocaleString('en-IN') : '—';
+}
+
+// ── DEPT BUTTONS ──
+function selectDept(el) {
+  document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── FORM SUBMITS ──
+function submitReg() {
+  alert('✅ Registration submitted! Our team will contact you within 24 hours to confirm your slot and share payment details via WhatsApp.');
+}
+function submitContact() {
+  alert('✅ Message sent! We\'ll get back to you within one business day.');
+}
+
+// ── INITIAL REVEAL ──
+document.querySelectorAll('.reveal').forEach(el => {
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+});
+</script>
+</body>
+</html>
